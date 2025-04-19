@@ -11,40 +11,240 @@ const driveData = {
   type: "folder",
   children: [
     {
-      name: "Desarrollo Web",
+      name: "Git & Github",
       type: "folder",
-      children: [
-        { name: "HTML y CSS Básico.rar", type: "file" },
-        { name: "JavaScript Fundamentals.rar", type: "file" },
-        { name: "React desde Cero.rar", type: "file" },
-      ],
+      children: [{ name: "Git & Github.rar", type: "file" }],
     },
     {
-      name: "Diseño Gráfico",
+      name: "HTML Definitivo",
       type: "folder",
-      children: [
-        { name: "Photoshop Avanzado.rar", type: "file" },
-        { name: "Illustrator para Principiantes.rar", type: "file" },
-        {
-          name: "Recursos",
-          type: "folder",
-          children: [
-            { name: "Brushes Premium.rar", type: "file" },
-            { name: "Templates PSD.rar", type: "file" },
-          ],
-        },
-      ],
+      children: [{ name: "HTML Definitivo.rar", type: "file" }],
     },
     {
-      name: "Marketing Digital",
+      name: "Practico HTML y CSS",
       type: "folder",
-      children: [
-        { name: "SEO Completo.rar", type: "file" },
-        { name: "Google Ads.rar", type: "file" },
-        { name: "Social Media Marketing.rar", type: "file" },
-      ],
+      children: [{ name: "Practico HTML y CSS.rar", type: "file" }],
     },
-    { name: "Bonus - Recursos Exclusivos.rar", type: "file" },
+    {
+      name: "Diseño Responsivo",
+      type: "folder",
+      children: [{ name: "Diseño Responsivo.rar", type: "file" }],
+    },
+    {
+      name: "Sistemas de diseños",
+      type: "folder",
+      children: [{ name: "Sistemas de diseños.rar", type: "file" }],
+    },
+    {
+      name: "Grid Layout",
+      type: "folder",
+      children: [{ name: "Grid Layout.rar", type: "file" }],
+    },
+    {
+      name: "Básico JavaScript",
+      type: "folder",
+      children: [{ name: "Básico JavaScript.rar", type: "file" }],
+    },
+    {
+      name: "Angular – Pruebas Unitarias con Jest",
+      type: "folder",
+      children: [{ name: "Angular – Pruebas Unitarias con Jest.rar", type: "file" }],
+    },
+    {
+      name: "API REST con PHP y MYSQL",
+      type: "folder",
+      children: [{ name: "API REST con PHP y MYSQL.rar", type: "file" }],
+    },
+    {
+      name: "Aprende Laravel Desde Cero",
+      type: "folder",
+      children: [{ name: "Aprende Laravel Desde Cero.rar", type: "file" }],
+    },
+    {
+      name: "Aprende Lenguaje C de CERO a EXPERTO",
+      type: "folder",
+      children: [{ name: "Aprende Lenguaje C de CERO a EXPERTO.rar", type: "file" }],
+    },
+    {
+      name: "Aprende SQL desde Cero",
+      type: "folder",
+      children: [{ name: "Aprende SQL desde Cero.rar", type: "file" }],
+    },
+    {
+      name: "Astro – El Framework para Sitios Web Orientados al Contenido",
+      type: "folder",
+      children: [{ name: "Astro – El Framework para Sitios Web Orientados al Contenido.rar", type: "file" }],
+    },
+    {
+      name: "Cómo Crear una Página Web con WordPress y Elementor PRO 2024",
+      type: "folder",
+      children: [{ name: "Cómo Crear una Página Web con WordPress y Elementor PRO 2024.rar", type: "file" }],
+    },
+    {
+      name: "Crea una Tienda Online con React",
+      type: "folder",
+      children: [{ name: "Crea una Tienda Online con React.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Angular",
+      type: "folder",
+      children: [{ name: "Curso de Angular.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Bootstrap",
+      type: "folder",
+      children: [{ name: "Curso de Bootstrap.rar", type: "file" }],
+    },
+    {
+      name: "Curso de C# y Net Core Desde Cero a Nivel Avanzado",
+      type: "folder",
+      children: [{ name: "Curso de C# y Net Core Desde Cero a Nivel Avanzado.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Manipulación del DOM",
+      type: "folder",
+      children: [{ name: "Curso de Manipulación del DOM.rar", type: "file" }],
+    },
+    {
+      name: "Curso de NodeJS",
+      type: "folder",
+      children: [{ name: "Curso de NodeJS.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Optimización Web",
+      type: "folder",
+      children: [{ name: "Curso de Optimización Web.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Preprocesadores CSS",
+      type: "folder",
+      children: [{ name: "Curso de Preprocesadores CSS.rar", type: "file" }],
+    },
+    {
+      name: "Curso de React.js",
+      type: "folder",
+      children: [{ name: "Curso de React.js.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Responsive Design Maquetación Mobile First",
+      type: "folder",
+      children: [{ name: "Curso de Responsive Design Maquetación Mobile First.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Ruby on Rails",
+      type: "folder",
+      children: [{ name: "Curso de Ruby on Rails.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Svelte",
+      type: "folder",
+      children: [{ name: "Curso de Svelte.rar", type: "file" }],
+    },
+    {
+      name: "Curso de TypeScript",
+      type: "folder",
+      children: [{ name: "Curso de TypeScript.rar", type: "file" }],
+    },
+    {
+      name: "Curso de Web Components con JavaScript",
+      type: "folder",
+      children: [{ name: "Curso de Web Components con JavaScript.rar", type: "file" }],
+    },
+    {
+      name: "Curso Diseño UXUI desde Cero",
+      type: "folder",
+      children: [{ name: "Curso Diseño UXUI desde Cero.rar", type: "file" }],
+    },
+    {
+      name: "Curso Diseño Web en WordPress",
+      type: "folder",
+      children: [{ name: "Curso Diseño Web en WordPress.rar", type: "file" }],
+    },
+    {
+      name: "Curso Frontend",
+      type: "folder",
+      children: [{ name: "Curso Frontend.rar", type: "file" }],
+    },
+    {
+      name: "Curso Kotlin en Español para Android de Cero a Profesional",
+      type: "folder",
+      children: [{ name: "Curso Kotlin en Español para Android de Cero a Profesional.rar", type: "file" }],
+    },
+    {
+      name: "Curso Práctico de Maquetación en CSS",
+      type: "folder",
+      children: [{ name: "Curso Práctico de Maquetación en CSS.rar", type: "file" }],
+    },
+    {
+      name: "Curso Práctico de Node",
+      type: "folder",
+      children: [{ name: "Curso Práctico de Node.rar", type: "file" }],
+    },
+    {
+      name: "Curso profesional de Angular",
+      type: "folder",
+      children: [{ name: "Curso profesional de Angular.rar", type: "file" }],
+    },
+    {
+      name: "Desarrolla un Sistema de Pedidos con Laravel 11",
+      type: "folder",
+      children: [{ name: "Desarrolla un Sistema de Pedidos con Laravel 11.rar", type: "file" }],
+    },
+    {
+      name: "Fundamentos de NodeJS",
+      type: "folder",
+      children: [{ name: "Fundamentos de NodeJS.rar", type: "file" }],
+    },
+    {
+      name: "Inicia con Tailwind, Alpine, Laravel y Livewire",
+      type: "folder",
+      children: [{ name: "Inicia con Tailwind, Alpine, Laravel y Livewire.rar", type: "file" }],
+    },
+    {
+      name: "Inteligencia Artificial",
+      type: "folder",
+      children: [{ name: "Inteligencia Artificial.rar", type: "file" }],
+    },
+    {
+      name: "MasterClass Python de 0 a Experto",
+      type: "folder",
+      children: [{ name: "MasterClass Python de 0 a Experto.rar", type: "file" }],
+    },
+    {
+      name: "Postman",
+      type: "folder",
+      children: [{ name: "Postman.rar", type: "file" }],
+    },
+    {
+      name: "Power BI Desde Cero",
+      type: "folder",
+      children: [{ name: "Power BI Desde Cero.rar", type: "file" }],
+    },
+    {
+      name: "Rasgos y Nociones Básicas de un(a) Programador(a)",
+      type: "folder",
+      children: [{ name: "Rasgos y Nociones Básicas de un(a) Programador(a).rar", type: "file" }],
+    },
+    {
+      name: "React Pro lleva tus bases a otro nivel",
+      type: "folder",
+      children: [{ name: "React Pro lleva tus bases a otro nivel.rar", type: "file" }],
+    },
+    {
+      name: "Router para Single Page App con JavaScript",
+      type: "folder",
+      children: [{ name: "Router para Single Page App con JavaScript.rar", type: "file" }],
+    },
+    {
+      name: "Todo PHP y MySQL, de Básico a Experto Full",
+      type: "folder",
+      children: [{ name: "Todo PHP y MySQL, de Básico a Experto Full.rar", type: "file" }],
+    },
+    {
+      name: "Tu Primer Sitio Web – Herramienta Clave para tus Proyectos",
+      type: "folder",
+      children: [{ name: "Tu Primer Sitio Web – Herramienta Clave para tus Proyectos.rar", type: "file" }],
+    },
   ],
 }
 
@@ -113,7 +313,7 @@ export default function DriveSimulator() {
           >
             {sidebarOpen && isMobile ? <X size={20} /> : sidebarOpen ? <ChevronLeft size={20} /> : <Menu size={20} />}
           </button>
-          <h1 className="text-lg sm:text-xl font-semibold text-gray-800 truncate">Mi Drive Simulator</h1>
+          <h1 className="text-lg sm:text-xl font-semibold text-gray-800 truncate">Cursos de Programación</h1>
         </div>
       </header>
 
@@ -148,10 +348,20 @@ export default function DriveSimulator() {
                   <span className="font-medium truncate">Mi Drive</span>
                 </div>
 
-                {/* Sidebar folders */}
+                {/* Sidebar folders - mostrar solo algunos cursos destacados */}
                 <div className="mt-4 space-y-1">
+                  <div className="p-2 font-medium text-sm text-gray-500">Cursos Destacados</div>
                   {driveData.children
-                    .filter((item) => item.type === "folder")
+                    .filter((item) =>
+                      [
+                        "Git & Github",
+                        "HTML Definitivo",
+                        "Básico JavaScript",
+                        "Curso de React.js",
+                        "Inteligencia Artificial",
+                        "MasterClass Python de 0 a Experto",
+                      ].includes(item.name),
+                    )
                     .map((folder, index) => (
                       <div
                         key={index}
@@ -162,6 +372,7 @@ export default function DriveSimulator() {
                         <span className="truncate">{folder.name}</span>
                       </div>
                     ))}
+                  <div className="p-2 text-xs text-gray-400 italic">{driveData.children.length} cursos disponibles</div>
                 </div>
               </div>
             )}
