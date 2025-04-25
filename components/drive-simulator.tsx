@@ -26,9 +26,9 @@ const driveData = {
       children: [{ name: "NUEVO - CSS Basico.rar", type: "file" }],
     },
     {
-      name: "SQL nivel basico",
+      name: "NUEVO - SQL nivel basico",
       type: "folder",
-      children: [{ name: "SQL nivel basico.rar", type: "file" }],
+      children: [{ name: "NUEVO - SQL nivel basico.rar", type: "file" }],
     },
     {
       name: "Git & Github",
@@ -51,9 +51,9 @@ const driveData = {
       children: [{ name: "Diseño Responsivo.rar", type: "file" }],
     },
     {
-      name: "Sistemas de diseños",
+      name: "NUEVO - Sistemas de diseños",
       type: "folder",
-      children: [{ name: "Sistemas de diseños.rar", type: "file" }],
+      children: [{ name: "NUEVO - Sistemas de diseños.rar", type: "file" }],
     },
     {
       name: "Grid Layout",
@@ -289,7 +289,7 @@ function CountdownTimer() {
             setSeconds(59)
           } else {
             // Reset timer when it reaches 0
-            setHours(23)
+            setHours(1)
             setMinutes(59)
             setSeconds(59)
           }
