@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Folder, File, ChevronLeft, ChevronRight, Home, Menu, X } from "lucide-react"
+import { useState, useEffect, useRef } from "react"
+import { Folder, File, ChevronLeft, ChevronRight, Home, Menu, X, Users } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
 
@@ -10,6 +10,26 @@ const driveData = {
   name: "Mi Pack de Cursos",
   type: "folder",
   children: [
+    {
+      name: "NUEVO - HTML para crear paginas web",
+      type: "folder",
+      children: [{ name: "NUEVO - HTML para crear paginas web.rar", type: "file" }],
+    },
+    {
+      name: "NUEVO - JavaScript nivel basico",
+      type: "folder",
+      children: [{ name: "NUEVO - JavaScript nivel basico.rar", type: "file" }],
+    },
+    {
+      name: "NUEVO - CSS Basico",
+      type: "folder",
+      children: [{ name: "NUEVO - CSS Basico.rar", type: "file" }],
+    },
+    {
+      name: "SQL nivel basico",
+      type: "folder",
+      children: [{ name: "SQL nivel basico.rar", type: "file" }],
+    },
     {
       name: "Git & Github",
       type: "folder",
@@ -248,6 +268,96 @@ const driveData = {
   ],
 }
 
+// Countdown timer component
+function CountdownTimer() {
+  const [hours, setHours] = useState(23)
+  const [minutes, setMinutes] = useState(59)
+  const [seconds, setSeconds] = useState(59)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1)
+      } else {
+        if (minutes > 0) {
+          setMinutes(minutes - 1)
+          setSeconds(59)
+        } else {
+          if (hours > 0) {
+            setHours(hours - 1)
+            setMinutes(59)
+            setSeconds(59)
+          } else {
+            // Reset timer when it reaches 0
+            setHours(23)
+            setMinutes(59)
+            setSeconds(59)
+          }
+        }
+      }
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [hours, minutes, seconds])
+
+  return (
+    <div className="flex items-center justify-center space-x-2 text-sm sm:text-base">
+      <div className="flex flex-col items-center">
+        <div className="bg-gray-800 text-white px-2 py-1 rounded-md font-mono">{hours.toString().padStart(2, "0")}</div>
+        <span className="text-xs mt-1">Horas</span>
+      </div>
+      <span className="text-xl font-bold">:</span>
+      <div className="flex flex-col items-center">
+        <div className="bg-gray-800 text-white px-2 py-1 rounded-md font-mono">
+          {minutes.toString().padStart(2, "0")}
+        </div>
+        <span className="text-xs mt-1">Min</span>
+      </div>
+      <span className="text-xl font-bold">:</span>
+      <div className="flex flex-col items-center">
+        <div className="bg-gray-800 text-white px-2 py-1 rounded-md font-mono">
+          {seconds.toString().padStart(2, "0")}
+        </div>
+        <span className="text-xs mt-1">Seg</span>
+      </div>
+    </div>
+  )
+}
+
+// Client counter component
+function ClientCounter() {
+  const [clientCount, setClientCount] = useState(257)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    // Random interval between 15-30 seconds
+    const getRandomInterval = () => Math.floor(Math.random() * (30000 - 15000 + 1) + 15000)
+
+    const scheduleNextIncrement = () => {
+      intervalRef.current = setTimeout(() => {
+        setClientCount((prev) => prev + 1)
+        scheduleNextIncrement()
+      }, getRandomInterval())
+    }
+
+    scheduleNextIncrement()
+
+    return () => {
+      if (intervalRef.current) {
+        clearTimeout(intervalRef.current)
+      }
+    }
+  }, [])
+
+  return (
+    <div className="flex items-center justify-center space-x-2">
+      <Users size={20} className="text-blue-600" />
+      <span className="font-bold text-lg">{clientCount}</span>
+      <span className="text-sm text-gray-600">clientes satisfechos</span>
+    </div>
+  )
+}
+
 export default function DriveSimulator() {
   // State to track navigation path
   const [path, setPath] = useState<any[]>([driveData])
@@ -317,6 +427,29 @@ export default function DriveSimulator() {
         </div>
       </header>
 
+      {/* Pricing Banner - Always visible */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-3 sm:p-4">
+        <div className="flex flex-col items-center justify-center">
+          <div className="text-center mb-2">
+            <span className="text-sm font-medium bg-yellow-400 text-blue-900 px-2 py-1 rounded-full">
+              ¡OFERTA ESPECIAL!
+            </span>
+          </div>
+          <div className="text-center mb-1">
+            <span className="text-lg sm:text-xl font-bold">Pack Completo de Cursos</span>
+          </div>
+          <div className="flex items-center justify-center space-x-2 mb-2">
+            <span className="text-2xl sm:text-3xl font-bold">$10.000</span>
+            <span className="text-lg line-through opacity-75">$20.000</span>
+          </div>
+          <div className="text-sm text-center mb-2">La oferta termina en:</div>
+          <CountdownTimer />
+          <div className="mt-3 text-center">
+            <ClientCounter />
+          </div>
+        </div>
+      </div>
+
       <div className="flex flex-1 overflow-hidden relative">
         {/* Sidebar - Overlay on mobile, side panel on desktop */}
         <aside
@@ -348,19 +481,38 @@ export default function DriveSimulator() {
                   <span className="font-medium truncate">Mi Drive</span>
                 </div>
 
-                {/* Sidebar folders - mostrar solo algunos cursos destacados */}
+                {/* Highlight new courses */}
+                <div className="mt-4 space-y-1">
+                  <div className="p-2 font-medium text-sm text-gray-500">Nuevos Cursos</div>
+                  {driveData.children
+                    .filter((item) => item.name.startsWith("NUEVO"))
+                    .map((folder, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center space-x-2 p-2 rounded-md bg-blue-50 hover:bg-blue-100 cursor-pointer mb-1"
+                        onClick={() => navigateToFolder(folder)}
+                      >
+                        <Folder size={18} className="text-blue-600 flex-shrink-0" />
+                        <span className="truncate font-medium text-blue-800">{folder.name}</span>
+                      </div>
+                    ))}
+                </div>
+
+                {/* Sidebar folders - mostrar algunos cursos destacados */}
                 <div className="mt-4 space-y-1">
                   <div className="p-2 font-medium text-sm text-gray-500">Cursos Destacados</div>
                   {driveData.children
-                    .filter((item) =>
-                      [
-                        "Git & Github",
-                        "HTML Definitivo",
-                        "Básico JavaScript",
-                        "Curso de React.js",
-                        "Inteligencia Artificial",
-                        "MasterClass Python de 0 a Experto",
-                      ].includes(item.name),
+                    .filter(
+                      (item) =>
+                        [
+                          "Git & Github",
+                          "HTML Definitivo",
+                          "Básico JavaScript",
+                          "Curso de React.js",
+                          "Inteligencia Artificial",
+                          "MasterClass Python de 0 a Experto",
+                          "SQL nivel basico",
+                        ].includes(item.name) && !item.name.startsWith("NUEVO"),
                     )
                     .map((folder, index) => (
                       <div
@@ -426,21 +578,39 @@ export default function DriveSimulator() {
                 key={index}
                 className={cn(
                   "p-2 sm:p-4 rounded-lg border border-gray-200 flex flex-col items-center cursor-pointer transition-all hover:shadow-md",
-                  item.type === "folder" ? "hover:bg-blue-50" : "hover:bg-gray-50",
+                  item.type === "folder"
+                    ? item.name.startsWith("NUEVO")
+                      ? "hover:bg-blue-50 border-blue-200 bg-blue-50"
+                      : "hover:bg-blue-50"
+                    : "hover:bg-gray-50",
                 )}
                 onClick={() => (item.type === "folder" ? navigateToFolder(item) : null)}
               >
                 {item.type === "folder" ? (
-                  <Folder size={32} className="text-blue-600 mb-2" />
+                  <Folder
+                    size={32}
+                    className={item.name.startsWith("NUEVO") ? "text-blue-600 mb-2" : "text-blue-500 mb-2"}
+                  />
                 ) : (
                   <File size={32} className="text-gray-500 mb-2" />
                 )}
-                <span className="text-center font-medium text-xs sm:text-sm truncate w-full" title={item.name}>
+                <span
+                  className={cn(
+                    "text-center font-medium text-xs sm:text-sm truncate w-full",
+                    item.name.startsWith("NUEVO") ? "text-blue-800" : "",
+                  )}
+                  title={item.name}
+                >
                   {item.name}
                 </span>
                 <span className="text-xs text-gray-500 mt-1 hidden sm:block">
                   {item.type === "folder" ? "Carpeta" : "Archivo .rar"}
                 </span>
+                {item.name.startsWith("NUEVO") && (
+                  <span className="bg-yellow-400 text-xs text-blue-900 px-1 py-0.5 rounded mt-1 font-medium">
+                    NUEVO
+                  </span>
+                )}
               </div>
             ))}
           </div>
